@@ -1,61 +1,93 @@
+import { motion } from "motion/react";
+import { ShoppingCart, Mail, Phone, MapPin } from "lucide-react";
 
-  {
-      "name": "UI/UX Portfolio",
-      "version": "0.1.0",
-      "private": true,
-      "dependencies": {
-          "@radix-ui/react-accordion": "^1.2.3",
-          "@radix-ui/react-alert-dialog": "^1.1.6",
-          "@radix-ui/react-aspect-ratio": "^1.1.2",
-          "@radix-ui/react-avatar": "^1.1.3",
-          "@radix-ui/react-checkbox": "^1.1.4",
-          "@radix-ui/react-collapsible": "^1.1.3",
-          "@radix-ui/react-context-menu": "^2.2.6",
-          "@radix-ui/react-dialog": "^1.1.6",
-          "@radix-ui/react-dropdown-menu": "^2.1.6",
-          "@radix-ui/react-hover-card": "^1.1.6",
-          "@radix-ui/react-label": "^2.1.2",
-          "@radix-ui/react-menubar": "^1.1.6",
-          "@radix-ui/react-navigation-menu": "^1.2.5",
-          "@radix-ui/react-popover": "^1.1.6",
-          "@radix-ui/react-progress": "^1.1.2",
-          "@radix-ui/react-radio-group": "^1.2.3",
-          "@radix-ui/react-scroll-area": "^1.2.3",
-          "@radix-ui/react-select": "^2.1.6",
-          "@radix-ui/react-separator": "^1.1.2",
-          "@radix-ui/react-slider": "^1.2.3",
-          "@radix-ui/react-slot": "^1.1.2",
-          "@radix-ui/react-switch": "^1.1.3",
-          "@radix-ui/react-tabs": "^1.1.3",
-          "@radix-ui/react-toggle": "^1.1.2",
-          "@radix-ui/react-toggle-group": "^1.1.2",
-          "@radix-ui/react-tooltip": "^1.1.8",
-          "class-variance-authority": "^0.7.1",
-          "clsx": "*",
-          "cmdk": "^1.1.1",
-          "embla-carousel-react": "^8.6.0",
-          "framer-motion": "*",
-          "input-otp": "^1.4.2",
-          "lucide-react": "^0.487.0",
-          "motion": "*",
-          "next-themes": "^0.4.6",
-          "react": "^18.3.1",
-          "react-day-picker": "^8.10.1",
-          "react-dom": "^18.3.1",
-          "react-hook-form": "^7.55.0",
-          "react-resizable-panels": "^2.1.7",
-          "recharts": "^2.15.2",
-          "sonner": "^2.0.3",
-          "tailwind-merge": "*",
-          "vaul": "^1.1.2"
-      },
-      "devDependencies": {
-          "@types/node": "^20.10.0",
-          "@vitejs/plugin-react-swc": "^3.10.2",
-          "vite": "6.3.5"
-      },
-      "scripts": {
-          "dev": "vite",
-          "build": "vite build"
-      }
-  }
+export function Footer() {
+  return (
+    <footer className="bg-gradient-to-br from-purple-900 via-pink-900 via-orange-900 to-blue-900 text-white py-12 px-6">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <div className="flex items-center gap-2 mb-4">
+              <div className="w-10 h-10 bg-gradient-to-br from-purple-400 via-pink-400 to-orange-400 rounded-xl flex items-center justify-center shadow-lg">
+                <ShoppingCart className="w-6 h-6 text-white" />
+              </div>
+              <span className="bg-gradient-to-r from-purple-200 via-pink-200 to-orange-200 bg-clip-text text-transparent">
+                FreshMart
+              </span>
+            </div>
+            <p className="text-purple-200">
+              Your trusted online grocery store delivering fresh quality products to your doorstep.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+          >
+            <h3 className="mb-4 text-purple-100">Quick Links</h3>
+            <ul className="space-y-2 text-purple-200">
+              <li><a href="#" className="hover:text-white transition-colors">Shop</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">About Us</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Delivery Info</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">FAQ</a></li>
+            </ul>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+          >
+            <h3 className="mb-4 text-purple-100">Categories</h3>
+            <ul className="space-y-2 text-purple-200">
+              <li><a href="#" className="hover:text-white transition-colors">Fruits & Vegetables</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Dairy & Eggs</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Meat & Seafood</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Bakery</a></li>
+            </ul>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+          >
+            <h3 className="mb-4 text-purple-100">Contact Us</h3>
+            <ul className="space-y-3 text-purple-200">
+              <li className="flex items-center gap-2">
+                <Phone className="w-4 h-4" />
+                <span>+91 98452 31901</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <Mail className="w-4 h-4" />
+                <span>hello@freshmart.in</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <MapPin className="w-4 h-4" />
+                <span>123 Market St, Bangalore</span>
+              </li>
+            </ul>
+          </motion.div>
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.4 }}
+          className="pt-8 border-t border-purple-700 text-center text-purple-200"
+        >
+          <p>© 2025 FreshMart. All rights reserved.</p>
+        </motion.div>
+      </div>
+    </footer>
+  );
+}
